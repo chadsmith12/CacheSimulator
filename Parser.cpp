@@ -116,12 +116,12 @@ bool Parser::ParseArguments(int argumentCount, char* arguments[])
 void Parser::PrintDebug()
 {
 	std::cout << "Input Parameters read:\n";
-	std::cout << "SizeL1 " << arguments[0] << std::endl;
-	//std::cout << "SizeL2 " << arguments[1] << std::endl;
-	std::cout << "Type " << cacheType << std::endl;
-	std::cout << "Memory references from read from file\n";
-	std::cout << (totalReads+totalWrites) << " Total\n";
-	std::cout << totalReads << " Reads\n";
+	std::cout << "\tSizeL1 " << arguments[0] << std::endl;
+	std::cout << "\tSizeL2 " << arguments[1] << std::endl;
+	std::cout << "\tType " << cacheType << std::endl;
+	std::cout << "Memory references read from file\n\t";
+	std::cout << (totalReads+totalWrites) << " Total\n\t";
+	std::cout << totalReads << " Reads\n\t";
 	std::cout << totalWrites << " Writes\n";
 
 }
