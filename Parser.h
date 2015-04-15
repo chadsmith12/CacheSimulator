@@ -26,6 +26,12 @@ public:
 	// ParseArguments - takes in the command line arguments and puts them onto the deque
 	bool ParseArguments(int argumentCount, char* arguments[]);
 
+	// GetMemory - returns the front of the memory deque, and then pops it from the deque
+	std::string GetMemory();
+
+	// GetReadWrite - gets the front of the readWrites deque, and then pops it from the deque
+	int GetReadsWrites();
+
 	// PrintDebug - prints out the debug information that the parser read in
 	void PrintDebug();
 private:

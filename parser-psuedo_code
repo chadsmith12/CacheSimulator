@@ -1,0 +1,35 @@
+Parser:
+	GetReadsWrites and GetMemory - these automatically return the first value on the deque and then pops it off the deque.  So when calling these they automatically get the next value.
+
+struct CacheMemory:
+	tag
+	block address - memory_reference % cache_lines
+	read/write
+
+
+class Cache:
+	std::map 
+		Key: line
+		value: tag
+
+	GetMemoryReference - Gets the memory.  Returns Memory struct
+	WriteRefernece - writes the memory to the map
+	ReadRefernece - reads the memory to the map
+
+	misses
+	hits
+
+	Parser
+
+
+GetMemoryReferece()
+	CacheMemory tempMemory
+	read in memory reference from parser
+	convert to binary
+
+	store tag in tempMemory
+
+	calculate block address 
+	store block address
+
+	store read/write from parser

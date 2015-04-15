@@ -111,6 +111,26 @@ bool Parser::ParseArguments(int argumentCount, char* arguments[])
 
 }
 
+// GetMemoryReference
+// Gets the front of the memory deque, pops it from the deque and returns that value
+std::string Parser::GetMemory()
+{
+	std::string reference = memoryReferences.front();
+
+	memoryReferences.pop_front();
+	return reference;
+}
+
+// GetReadsWrites
+// Gets the memory reference read/write that is first on the deque, and returns that value
+int Parser::GetReadsWrites()
+{
+	int temp = readWrites.front();
+
+	readWrites.pop_front();
+	return temp;
+}
+
 // PrintDebug
 // Prints out the debug information that the parser read in
 void Parser::PrintDebug()
