@@ -32,6 +32,12 @@ public:
 	// GetReadWrite - gets the front of the readWrites deque, and then pops it from the deque
 	int GetReadsWrites();
 
+	// GetCacheSize - returns the cache size. Returns the size of the sizel1 argument
+	unsigned int GetCacheSize();
+
+	// IsEmpty - return if the parser is empty
+	bool IsEmpty();
+
 	// PrintDebug - prints out the debug information that the parser read in
 	void PrintDebug();
 private:

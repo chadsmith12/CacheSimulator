@@ -44,3 +44,32 @@ bool IsPowerOfTwo(unsigned int x)
 {
 	return ((x != 0) && ((x & (~x + 1)) == x));
 }
+
+// Returns a unsigned integer of the hex value
+unsigned int ToDecimal(const std::string& hexString)
+{
+	unsigned int decimal;
+	std::stringstream ss;
+	ss << std::hex << hexString;
+	ss >> decimal;
+
+	return decimal;
+}
+
+// Returns the binary of the string value given in
+std::string ToBinary(unsigned int decimal)
+{
+	std::string binary = std::bitset<32>(decimal).to_string();
+
+	return binary;
+}
+
+// Get the Binary string representation of the tag from the original decimal address passed in
+std::string GetTag(unsigned int decimal)
+{
+	unsigned int tag = decimal>>15;
+
+	std::string binaryTag = std::bitset<17>(tag).to_string();
+
+	return binaryTag;
+}

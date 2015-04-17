@@ -1,6 +1,6 @@
 // Parser.cpp
 // Define everything in the Parser Class
-// Last Modified: 3-12 By: Chad
+// Last Modified: 4-15 By: Chad
 
 #include "Parser.h"
 #include "HelperFunctions.h"
@@ -129,6 +129,20 @@ int Parser::GetReadsWrites()
 
 	readWrites.pop_front();
 	return temp;
+}
+
+// Gets the size of the l1 cache, converts to decimal and returns
+unsigned int Parser::GetCacheSize()
+{
+	unsigned int sizeL1 = arguments.front();
+
+	return sizeL1;
+}
+
+// Return true if the parser deque is empty
+bool Parser::IsEmpty()
+{
+	return memoryReferences.empty();
 }
 
 // PrintDebug
