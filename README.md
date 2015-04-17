@@ -14,6 +14,8 @@ Features:
 Trace Parser:
 Reads in how many reads/writes their are
 reads in all the memory references
+Cache Simulator:
+Simulates a direct cache mapping
 
 Code Documentation:
 HelperFunctions - Functions to help with common things
