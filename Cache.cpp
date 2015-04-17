@@ -72,6 +72,7 @@ void Cache::RunSimulation()
 		// if we have a write put this memory in the map and increase the number of hits
 		if(memoryBlock.readWrite == 0)
 		{
+			cacheMap[memoryBlock.blockAddress] = memoryBlock.tag;
 			++hits;
 		}
 
