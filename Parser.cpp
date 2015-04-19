@@ -10,6 +10,34 @@ Parser::Parser()
 	totalReads = 0;
 	totalWrites = 0;
 	cacheType = "";
+	debugHits = 0;
+}
+
+// ParseFiles
+// Reads in every line, and parses the read/writes and memory referneces
+// stores each in a deque
+void Parser::ParseFile()
+{
+	while(!std::cin.eof())
+	{
+		// get the read/write parameter
+		int parameter;
+		std::cin >> parameter;
+		std::string memory;
+		std::cin >> memory;
+
+		memoryReferences.push_back(memory);
+		readWrites.push_back(parameter);
+
+		if(parameter == 0)
+		{
+			totalWrites++;
+		}
+		else
+		{
+			totalReads++;
+		}
+	}
 }
 
 // ReadLines
@@ -42,6 +70,7 @@ void Parser::ParseMemory()
 // From every line in the vector, get the read/write value and push it onto the deque
 void Parser::ParseReadWrites()
 {
+	debugHits++;
 	// from every line in the vector
 	for(unsigned int i = 0; i < lines.size(); i++)
 	{

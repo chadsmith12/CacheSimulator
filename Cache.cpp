@@ -42,14 +42,12 @@ Cache::CacheMemory Cache::GetMemoryReference()
 // returns false if the simulation could not be started
 bool Cache::InitSimulation(int argumentCount, char* arguments[])
 {
-	traceParser.ReadLines();
 	if(!traceParser.ParseArguments(argumentCount, arguments))
 	{
 		std::cout << "ERROR: sizeL1 must be power of two, and sizeL2 must be power of two and larger than sizeL1" << std::endl;
 		return false;
 	}
-	traceParser.ParseReadWrites();
-	traceParser.ParseMemory();
+	traceParser.ParseFile();
 
 	return true;
 }

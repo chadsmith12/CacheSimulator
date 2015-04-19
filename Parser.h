@@ -14,6 +14,9 @@ public:
 	// Constructor - Init everything and get the parser setup
 	Parser();
 
+	// ParseFile - Parses the file, reads in memory referneces and read/writes
+	void ParseFile();
+
 	// ReadLines - Until we reach the end of the file read every single line in and push it into the vector
 	void ReadLines();
 
@@ -56,6 +59,7 @@ private:
 	int totalWrites;
 	// tells if the cacheType is a direct or indirect type
 	std::string cacheType;
+	int debugHits;
 };
 
 #endif
