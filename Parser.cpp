@@ -40,56 +40,6 @@ void Parser::ParseFile()
 	}
 }
 
-// ReadLines
-// Reads in ever line read from the file and stores each line in a vector
-void Parser::ReadLines()
-{
-	// until we reach the end of the file
-	for(int i = 0; !std::cin.eof(); i++)
-	{
-		// Read in a line from the file and then push it onto the vector
-		std::string input = ReadLine();
-		lines.push_back(input);
-	}
-}
-
-// ParseMemory
-// From every line we have stored in the vector, get the memory references and push it onto the deque
-void Parser::ParseMemory()
-{
-	// from every line in the vector
-	for(unsigned int i = 0; i < lines.size(); i++)
-	{
-		std::string memory = GetMemoryReference(lines[i]);
-		// push it onto the deque
-		memoryReferences.push_back(memory);
-	}
-}
-
-// ParseReadWrites
-// From every line in the vector, get the read/write value and push it onto the deque
-void Parser::ParseReadWrites()
-{
-	debugHits++;
-	// from every line in the vector
-	for(unsigned int i = 0; i < lines.size(); i++)
-	{
-		int paramter = GetReadWrite(lines[i]);
-		readWrites.push_back(paramter);
-
-		// increase the number of reads or writes based on what the parameter is
-		// 0 is a write
-		if(paramter == 0)
-		{
-			totalWrites++;
-		}
-		else
-		{
-			totalReads++;
-		}
-	}
-}
-
 // ParseArguments
 // Takes in how many command line arguments, and the arguments array
 // Returns true if the arguments are valid, false if invalid

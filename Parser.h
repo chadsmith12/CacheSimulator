@@ -17,15 +17,6 @@ public:
 	// ParseFile - Parses the file, reads in memory referneces and read/writes
 	void ParseFile();
 
-	// ReadLines - Until we reach the end of the file read every single line in and push it into the vector
-	void ReadLines();
-
-	// ParseMemory - gets all the memory references that are in the lines and pushes them onto the deque
-	void ParseMemory();
-
-	// ParseReadWrites - gets if the memory referenece is a read or a write.
-	void ParseReadWrites();
-
 	// ParseArguments - takes in the command line arguments and puts them onto the deque
 	bool ParseArguments(int argumentCount, char* arguments[]);
 
