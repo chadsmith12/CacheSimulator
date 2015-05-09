@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <stack>
 
 // Project Includes
 #include "Parser.h"
@@ -36,14 +37,21 @@ private:
 	// use a std::map
 	// key: line
 	// value: tag
-	std::map<int, std::string> cacheMap;
+	std::map<int, std::string> l1cacheMap;
+	std::map<int, std::string> l2cacheMap;
+
+	// Runs a Direct Cache Simulation
+	void DirectSimulation();
+
 
 	// Returns a CacheMemory object that was gathered in from the parser
 	CacheMemory GetMemoryReference();
 
 	// hold how many hits and misses the simulation had
-	int misses;
-	int hits;
+	int l1Misses;
+	int l1Hits;
+	int l2Misses;
+	int l2Hits;
 
 	Parser traceParser;
 };

@@ -26,8 +26,12 @@ public:
 	// GetReadWrite - gets the front of the readWrites deque, and then pops it from the deque
 	int GetReadsWrites();
 
-	// GetCacheSize - returns the cache size. Returns the size of the sizel1 argument
-	unsigned int GetCacheSize();
+	// GetCacheSize - returns the cache size. Returns the size of the sspecific cache argument
+	unsigned int GetCacheSize(std::string cache);
+
+	// GetCacheType - returns the type of cache simulation that we are going to run
+	// direct or indirect
+	std::string GetCacheType();
 
 	// IsEmpty - return if the parser is empty
 	bool IsEmpty();

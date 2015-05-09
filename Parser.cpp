@@ -110,12 +110,26 @@ int Parser::GetReadsWrites()
 	return temp;
 }
 
-// Gets the size of the l1 cache, converts to decimal and returns
-unsigned int Parser::GetCacheSize()
+// Gets the size of the cache, converts to decimal and returns
+unsigned int Parser::GetCacheSize(std::string cache)
 {
-	unsigned int sizeL1 = arguments.front();
+	unsigned int size = 0;
+	if (cache == "direct")
+	{
+		size = arguments.front();
+	}
+	else
+	{
+		size = arguments[1];
+	}
 
-	return sizeL1;
+	return size;
+}
+
+// returns the type cache that we are running
+std::string Parser::GetCacheType()
+{
+	return cacheType;
 }
 
 // Return true if the parser deque is empty
