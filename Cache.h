@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include <stack>
+#include<list>
 
 // Project Includes
 #include "Parser.h"
@@ -40,8 +40,14 @@ private:
 	std::map<int, std::string> l1cacheMap;
 	std::map<int, std::string> l2cacheMap;
 
+	// hold the fully associative cache's
+	std::list<std::string> l1AssociativeCache;
+	std::list<std::string> l2AssociativeCache;
+
 	// Runs a Direct Cache Simulation
 	void DirectSimulation();
+	// associative cache
+	void AssociativeSimulation();
 
 
 	// Returns a CacheMemory object that was gathered in from the parser
@@ -52,6 +58,10 @@ private:
 	int l1Hits;
 	int l2Misses;
 	int l2Hits;
+	int l1TotalTries;
+	int l2TotalTries;
+
+	int totalReplacements;
 
 	Parser traceParser;
 };

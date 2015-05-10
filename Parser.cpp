@@ -114,7 +114,7 @@ int Parser::GetReadsWrites()
 unsigned int Parser::GetCacheSize(std::string cache)
 {
 	unsigned int size = 0;
-	if (cache == "direct")
+	if (cache == "l1")
 	{
 		size = arguments.front();
 	}
