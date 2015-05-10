@@ -14,6 +14,7 @@ Cache::Cache()
 	l2Misses = 0;
 	l2Hits = 0;
 	l1TotalTries = 0;
+	l2TotalTries = 0;
 	totalReplacements = 0;
 }
 
@@ -120,12 +121,13 @@ void Cache::DirectSimulation()
 				{
 					// found it in l2, 
 					l2Hits++;
+					l2TotalTries++;
 				}
 				else
 				{
 					l2Misses++;
+					l2TotalTries++;
 				}
-				l2TotalTries++;
 			}
 		}
 	}
@@ -190,16 +192,17 @@ void Cache::AssociativeSimulation()
 			if (!l1Found)
 			{
 				l1Misses++;
-				l2TotalTries++;
 				// check l2
 				bool l2Found = std::find(l2AssociativeCache.begin(), l2AssociativeCache.end(), tempMemory.tag) != l2AssociativeCache.end();
 				if (!l2Found)
 				{
 					l2Misses++;
+					l2TotalTries++;
 				}
 				else
 				{
 					l2Hits++;
+					l2TotalTries++;
 				}
 			}
 			else
